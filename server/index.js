@@ -105,7 +105,7 @@ const startListening = () => {
   require('./socket')(io)
 }
 
-const syncDb = () => db.sync()
+const syncDb = () => db.sync() // {force: true} to wipe the db!
 
 async function bootApp() {
   await sessionStore.sync()
