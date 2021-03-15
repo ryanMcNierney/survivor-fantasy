@@ -16,16 +16,12 @@ const Castaway = db.define('castaway', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  survivorSeason: {
+  season: {
     type: Sequelize.STRING,
     allowNull: false
   },
   bio: {
     type: Sequelize.TEXT,
-    allowNull: false
-  },
-  startingTribe: {
-    type: Sequelize.STRING,
     allowNull: false
   }
 })
