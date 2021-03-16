@@ -12,6 +12,21 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/season', async (req, res, next) => {
+  try {
+    const seasonList = []
+    const seasons = await Castaway.aggregate('season', 'DISTINCT', {
+      plain: false
+    })
+    for (const el of seasons) {
+      seasonList.push(el.DISTINCT)
+    }
+    res.json(seasonList.sort((a, b) => a - b))
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/season/:seasonId', async (req, res, next) => {
   try {
     const {seasonId} = req.params
