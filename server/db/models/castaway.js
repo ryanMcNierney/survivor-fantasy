@@ -17,7 +17,7 @@ const Castaway = db.define('castaway', {
     allowNull: false
   },
   season: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false
   },
   bio: {
